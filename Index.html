@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gotham Cinema</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       CITY / HOME
+  ========================== -->
+  <section id="city" class="scene active">
+    <div class="overlay"></div>
+
+    <div class="hero">
+      <p class="eyebrow">WELCOME TO</p>
+
+      <h1>GOTHAM<br>CINEMA</h1>
+
+      <p class="subtitle">
+        A private midnight screening
+      </p>
+
+      <button id="enterCinema">
+        ENTER CINEMA
+      </button>
+    </div>
+  </section>
+
+
+  <!-- =========================
+       CINEMA LOBBY
+  ========================== -->
+  <section id="lobby" class="scene">
+
+    <div class="lobby-container">
+
+      <div class="cinema-header">
+        <p class="eyebrow">GOTHAM CINEMA</p>
+        <h2>PRIVATE THEATER</h2>
+        <p>Select a movie or episode to watch.</p>
+      </div>
+
+
+      <!-- EPISODE SELECTION -->
+      <div class="panel">
+
+        <h3>SELECT EPISODE</h3>
+
+        <div class="episode-grid">
+
+          <button class="episode-btn active"
+                  data-episode="1"
+                  data-title="Episode 1"
+                  data-video="assets/episode1.mp4">
+            <span>EPISODE</span>
+            <strong>01</strong>
+          </button>
+
+          <button class="episode-btn"
+                  data-episode="2"
+                  data-title="Episode 2"
+                  data-video="assets/episode2.mp4">
+            <span>EPISODE</span>
+            <strong>02</strong>
+          </button>
+
+          <button class="episode-btn"
+                  data-episode="3"
+                  data-title="Episode 3"
+                  data-video="assets/episode3.mp4">
+            <span>EPISODE</span>
+            <strong>03</strong>
+          </button>
+
+        </div>
+
+        <p id="selectedEpisode">
+          Selected: Episode 1
+        </p>
+
+      </div>
+
+
+      <!-- SEATING -->
+      <div class="panel">
+
+        <h3>CHOOSE YOUR SEAT</h3>
+
+        <div class="seats">
+
+          <button class="seat" data-seat="A1">A1</button>
+          <button class="seat" data-seat="A2">A2</button>
+          <button class="seat" data-seat="A3">A3</button>
+          <button class="seat" data-seat="A4">A4</button>
+
+        </div>
+
+        <p id="seatStatus">
+          Select a seat
+        </p>
+
+      </div>
+
+
+      <!-- PRIVATE WATCH ROOM -->
+      <div class="panel room-panel">
+
+        <h3>PRIVATE WATCH ROOM</h3>
+
+        <p>
+          Create a room and invite someone to watch with you.
+        </p>
+
+        <button id="createRoom">
+          CREATE ROOM
+        </button>
+
+        <div class="room-divider">
+          OR
+        </div>
+
+        <input
+          id="roomCodeInput"
+          type="text"
+          maxlength="8"
+          placeholder="ENTER ROOM CODE"
+          autocomplete="off"
+        >
+
+        <button id="joinRoom">
+          JOIN ROOM
+        </button>
+
+        <div id="roomStatus">
+          No room connected
+        </div>
+
+        <button id="copyRoomCode" class="secondary hidden">
+          COPY ROOM CODE
+        </button>
+
+      </div>
+
+
+      <!-- ENTER THEATER -->
+      <button id="watchMovie" class="watch-button">
+        ENTER THEATER
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       THEATER
+  ========================== -->
+  <section id="theater" class="scene">
+
+    <div class="theater-container">
+
+      <div class="theater-top">
+
+        <button id="backToLobby" class="back-button">
+          ← BACK
+        </button>
+
+        <div>
+          <p class="eyebrow">GOTHAM CINEMA</p>
+          <h2 id="theaterTitle">
+            Episode 1
+          </h2>
+        </div>
+
+        <div id="syncStatus" class="sync-status">
+          ● LOCAL
+        </div>
+
+      </div>
+
+
+      <!-- SCREEN -->
+      <div class="screen-wrapper">
+
+        <video
+          id="movie"
+          controls
+          playsinline
+          preload="metadata"
+        >
+          <source
+            id="movieSource"
+            src="assets/episode1.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not support HTML5 video.
+        </video>
+
+      </div>
+
+
+      <!-- WATCH INFORMATION -->
+      <div class="watch-info">
+
+        <div>
+          <span>ROOM</span>
+          <strong id="theaterRoom">
+            —
+          </strong>
+        </div>
+
+        <div>
+          <span>EPISODE</span>
+          <strong id="theaterEpisode">
+            01
+          </strong>
+        </div>
+
+        <div>
+          <span>SYNC</span>
+          <strong id="theaterSync">
+            Waiting
+          </strong>
+        </div>
+
+      </div>
+
+
+      <div id="theaterMessage" class="theater-message">
+        Select an episode and press play.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+  <script src="game.js"></script>
+
+</body>
+</html>
