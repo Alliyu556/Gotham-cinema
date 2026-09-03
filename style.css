@@ -1,0 +1,27 @@
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#030407;color:#fff;font-family:Arial,Helvetica,sans-serif}
+body{overflow:hidden}
+.scene{display:none;min-height:100vh;position:relative;overflow:hidden}
+.scene.active{display:flex}
+#city{align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 50% 65%,#182334 0,#070b12 35%,#020307 75%)}
+.sky{position:absolute;inset:0;background:linear-gradient(#010206 0%,transparent 55%),repeating-linear-gradient(90deg,transparent 0 4%,#111827 4.2% 4.8%,transparent 5% 9%);opacity:.7}
+.city-glow{position:absolute;width:80vw;height:35vh;bottom:-15vh;background:#172b45;filter:blur(70px);opacity:.5}
+.content{position:relative;z-index:2;width:min(92%,760px);padding:30px}
+.eyebrow{letter-spacing:7px;font-size:12px;opacity:.65}
+h1{font-size:clamp(52px,13vw,110px);line-height:.85;letter-spacing:8px;margin:18px 0}
+h1 span{font-size:.65em;letter-spacing:15px}
+h2{font-size:clamp(34px,8vw,70px);margin:10px 0}
+.subtitle{opacity:.75}
+button{appearance:none;border:1px solid #9ca3af;background:#0b0d12;color:#fff;border-radius:8px;padding:14px 22px;font-size:16px;font-weight:700;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:not(:disabled):active{transform:scale(.98)}
+#lobby{align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle,#151b25,#030407 70%)}
+.seats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:28px 0}
+.seat.selected{outline:3px solid #fff;background:#252b36}
+#theater{align-items:center;justify-content:center;background:radial-gradient(circle at 50% 30%,#171a21,#000 70%)}
+.theater-ui{width:min(96%,1100px);text-align:center;padding:18px}
+.topbar{display:flex;justify-content:space-between;opacity:.7;font-size:12px;letter-spacing:3px;margin-bottom:12px}
+.screen-frame{background:#000;border:8px solid #20242c;border-radius:5px;box-shadow:0 0 60px rgba(255,255,255,.08),0 20px 80px #000}
+video{display:block;width:100%;max-height:75vh;background:#000}
+.message{padding:14px;opacity:.65;font-size:14px}
+#backBtn{margin-top:4px;font-size:13px;padding:10px 16px}

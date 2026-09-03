@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gotham Cinema</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <section id="city" class="scene active">
+    <div class="sky"></div>
+    <div class="city-glow"></div>
+    <div class="content">
+      <p class="eyebrow">WELCOME TO</p>
+      <h1>GOTHAM<br><span>CINEMA</span></h1>
+      <p class="subtitle">A private midnight screening</p>
+      <button id="enterBtn">ENTER CINEMA</button>
+    </div>
+  </section>
+
+  <section id="lobby" class="scene">
+    <div class="content">
+      <p class="eyebrow">SCREEN 01</p>
+      <h2>GOTHAM CINEMA</h2>
+      <p>Choose your seat and begin the screening.</p>
+      <div class="seats">
+        <button class="seat" data-seat="A1">A1</button>
+        <button class="seat" data-seat="A2">A2</button>
+        <button class="seat" data-seat="A3">A3</button>
+        <button class="seat" data-seat="A4">A4</button>
+      </div>
+      <button id="watchBtn" disabled>SELECT A SEAT</button>
+    </div>
+  </section>
+
+  <section id="theater" class="scene">
+    <div class="theater-ui">
+      <div class="topbar"><span>GOTHAM CINEMA</span><span id="seatLabel"></span></div>
+      <div class="screen-frame">
+        <video id="movie" controls playsinline preload="metadata">
+          <source src="assets/the_same_vigilante.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="message" id="message">Press play to start the screening.</div>
+      <button id="backBtn">← BACK TO LOBBY</button>
+    </div>
+  </section>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
